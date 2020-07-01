@@ -6,6 +6,7 @@ public class App {
         reader.setup("/Users/durlesteanu/Desktop/cap.txt", 1,1 );
         FileWordAnalyzer analyzer = new FileWordAnalyzer(reader);
         System.out.println(reader.readLines());
+        System.out.println(analyzer.getWordsOrderedAlphabetically());
 
 
 
