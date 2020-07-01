@@ -48,10 +48,17 @@ public class PartReader {
         return fileContent;
     }
 
-    public void readLines() {
+    public String readLines() {
         String text = read();
+        String[] rows = text.split("\n");
+        StringBuilder newText = new StringBuilder();
+        for(int i = fromLine -1; i < rows.length; i++){
+            if(i > toLine -1) break;
+            if (i != fromLine - 1) newText.append("\n");
+            newText.append(rows[i]);
+        }
+        return newText.toString();
 
     }
-
 
 }
