@@ -54,15 +54,25 @@ class FileWordAnalyzerTest {
 
 
     @MainTest
+    @Disabled
     void getWordsContainingSubstring() {
+        List<String> testList = analyzer.getWordsContainingSubstring("ee");
+        assertEquals(testList.size(), 69);
     }
 
     @MainTest
     void getStringsWhichPalindromes() {
+        List<String> testList = analyzer.getStringsWhichPalindromes();
+        for(String word: testList){
+            String reversedWord = new StringBuilder(word).reverse().toString();
+            assertEquals(reversedWord, word);
+        }
     }
 
     @Test
     @Tag("Secondary")
     void isNumeric() {
+        double randomVar = Math.random() * 10;
+        assertTrue(analyzer.isNumeric(String.valueOf(randomVar)));
     }
 }

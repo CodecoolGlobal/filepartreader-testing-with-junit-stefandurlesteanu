@@ -53,7 +53,7 @@ public class FileWordAnalyzer {
         return resultWordList;
     }
 
-    public static boolean isNumeric(String str) {
+    public boolean isNumeric(String str) {
         try {
             Double.parseDouble(str);
             return true;
